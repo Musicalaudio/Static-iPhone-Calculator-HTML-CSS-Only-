@@ -1,0 +1,98 @@
+:root{
+  /* theme */
+  --background-clr: hsl(0, 0%, 11%);
+  --light-clr:hsl(60, 2.3%, 82.7%);
+  --dark-clr: hsl(0, 0%, 31.4%);
+  --utility-clr: hsl(35.1,100%,50%);
+  --button-hover: hsl(0,0%,97.6%);
+  
+  /* sizing */
+  --calc-char: 40ch;
+  --calc-width-percentage: 25%;
+  --calc-width: min(var(--calc-char), var(--calc-width-percentage));
+  --calc-screen-inline: min(var(--calc-char)/10, var(--calc-width-percentage)/4);
+  --calc-screen-block-start: min(var(--calc-char)/2.5, var(--calc-width-percentage)/1);
+  --calc-screen-block-end:  min(var(--calc-char)/10, var(--calc-width-percentage)/4);
+  --calc-zero-inline:min(var(--calc-char)/5, var(--calc-width-percentage)/1.25);
+
+  /* typography */
+  font-size: 62.5%;
+  --primary-font: Helvetica, Arial, Sans-serif;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--primary-font);
+  font-size: 1.8rem;
+}
+
+.calc{
+  border: var(--background-clr) .3rem solid;
+  width: var(--calc-width);
+  padding: 1%;
+  background-color: var(--background-clr);
+  font-weight: bold;
+
+}
+
+.calc__screen{
+  background-color: var(--background-clr);
+  color: white;
+  width: 100%;
+  padding-inline-end: var(--calc-screen-inline);
+  padding-block-start: var(--calc-screen-block-start);
+  padding-block-end: var(--calc-screen-block-end);
+  border: 0; 
+  grid-column: 1 / -1; 
+  text-align: right;
+  font-size: 4.5rem;
+}
+
+.calc__buttons{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  aspect-ratio: 1/1;
+  height: 60%;  
+  gap: 1rem;
+}
+
+.calc__btn{
+  border: 0;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.calc__btn--zero{
+  border-radius: 135px;
+  grid-column: span 2 ;
+  aspect-ratio: 2/1;
+  text-align: left;
+  padding-inline-start: var(--calc-zero-inline);
+} 
+
+.calc__btn--light{
+  background-color: var(--light-clr);
+}
+
+.calc__btn--dark{
+  background-color: var(--dark-clr);
+  color: var(--light-clr);
+  color: white;
+}
+
+.calc__btn--utility{
+  background-color: var(--utility-clr);
+  color: var(--light-clr);
+}
+
+.calc__btn--utility.selected{
+  background-color: white;
+  color: var(--utility-clr);
+}
+
+.calc__btn--light:hover, .calc__btn--dark:hover{
+  
+}
