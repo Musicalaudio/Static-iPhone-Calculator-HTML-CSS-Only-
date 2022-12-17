@@ -63,6 +63,26 @@ body{
   aspect-ratio: 1/1;
   border-radius: 50%;
   cursor: pointer;
+  position: relative;
+}
+
+
+.calc__btn::after{
+  content: "";
+  position:absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 0;
+  transition: opacity 250ms ease-out; 
+}
+
+.calc__btn--zero::after{
+  border-radius: 135px;
+}
+
+.calc__btn:hover::after{
+  opacity: .5;
 }
 
 .calc__btn--zero{
@@ -91,8 +111,4 @@ body{
 .calc__btn--utility.selected{
   background-color: white;
   color: var(--utility-clr);
-}
-
-.calc__btn--light:hover, .calc__btn--dark:hover{
-  
 }
